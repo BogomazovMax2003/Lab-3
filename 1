@@ -1,0 +1,112 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <string>
+
+int main() {
+    using std::cout;
+    using std::cin;
+    using std::endl;
+
+    int a[10];
+    int b[10];
+    for (int i=0;i<10;i++) {
+      a[i] =std::rand()%21-10 ;
+    }
+
+    for (int t=0;t<10;t++) {
+        b[t] =a[t]/a[0];
+        cout<<b[t]<<endl;
+    }
+
+    int n,z;
+    cin>>n;
+    int* c=new int[n];
+    for (int i=0;i<n;i++) {
+        cin>>z;
+        c[i]=z;
+        cout<<c[i]<<endl;
+    }
+    cout<<endl;
+    for (int i=0;i<n;i++) {
+        if (c[i]=0)
+            c[i]=c[i]+3;
+        cout<<c[i]<<endl;
+    }
+    cout<<endl;
+    int k1,k2,s;
+    s=0;
+    cin>>k1;
+    cin>>k2;
+    for (int i=k1;i<k2;i++) {
+        s+=c[i];
+    }
+    cout<<s<<endl;
+    cout<<endl;
+
+
+    int p,q,a,u;
+    cin>>p;
+    a=0;
+    std::vector<int> myVec1(p);
+    for (int i: myVec1){
+       cin>>q;
+        myVec1[a]=q;
+        a++;
+    }
+    for (int i: myVec1){
+        cout<<i<<endl;
+    }
+    cout<<endl;
+    u=0;
+    myVec1.push_back(2);
+    for (int i: myVec1){
+        u+=i;
+        cout<<i<<endl;
+    }
+    cout<<u<<endl;
+
+    int m=0;
+    for (int i: myVec1) {
+
+        if (i == 0) {
+            myVec1.erase(myVec1.cbegin()+m);
+                    break;
+        }
+       m++;
+
+    }
+    for (int i: myVec1){
+        cout<<i<<endl;}
+    std::string str;
+    cin>>str;
+    cout<<str<<endl;
+    float o=0;
+    int f=0;
+
+    for(char i:str){
+        f++;
+        if (i=='1'|| i=='2'|| i=='3'|| i=='4'|| i=='5'|| i=='6'|| i=='7'|| i=='8'|| i=='9'|| i=='0')
+            o++;
+    }
+    float l=o/f;
+    cout<<f<<endl;
+    cout<<o<<endl;
+    cout<<l<<endl;
+    std::string v,c;
+    cin>>v;
+    cin>>c;
+    cout<<v+c;
+    std::string z="Can you can a can as a canner can can a can?";
+    std::string m="can";
+    std::string g;
+    cin>>g;
+    while (z.find(m)!=std::string::npos){
+    auto pos=z.find(m);
+    z.erase(pos,m.size());
+    z.insert(pos,g);}
+
+    cout<<z;
+    return 0;
+}
