@@ -1,0 +1,30 @@
+//Пункт 3 и 4 в части 4
+int k1, k2;
+    std::string str;
+    std::getline(std::cin, str);
+    std::cin >> k1 >> k2;
+    std::cout << str.substr(k1, k2 - k1 + 1) << std::endl;
+    
+    
+    
+    // пункт 4
+ std::string str("Can you can a can as a canner can can a can?");
+    std::string za;
+    std::cin >> za;
+    str.pop_back();
+    str.push_back(' ');
+    str[0] = tolower(str[0]);
+    bool b = true;
+    while (b) {
+        b = false;
+        int n = str.find("can ");
+        if (n >= 0) {
+            b = true;
+            str.replace(n, 4, za + ' ');
+        }
+    }
+    str.pop_back();
+    str.push_back('?');
+    str[0] = toupper(str[0]);
+    std::cout << str << std::endl;
+    // Пока пункт 2 как упростить идей не появилось.
